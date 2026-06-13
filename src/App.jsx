@@ -232,15 +232,8 @@ function App() {
         <nav>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
-          <button type="button" className="nav-button" onClick={() => setActiveView('mockup')}>
-            Pratibha Mockup
-          </button>
           <a href="#stack">Tech Stack</a>
-          <a href={resumeLink}>Resume</a>
           <a href="#contact">Work With Me</a>
-          <a href="https://github.com/LloydsLin" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
         </nav>
       </header>
 
@@ -294,9 +287,6 @@ function App() {
               </a>
               <a className="btn btn-secondary" href="#contact">
                 Collaborate
-              </a>
-              <a className="btn btn-secondary" href={resumeLink}>
-                Resume Placeholder
               </a>
             </motion.div>
           </motion.div>

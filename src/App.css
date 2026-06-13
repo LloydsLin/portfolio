@@ -18,13 +18,19 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  backdrop-filter: blur(10px);
-  background: color-mix(in srgb, var(--bg-deep) 78%, transparent);
-  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px) saturate(130%);
+  -webkit-backdrop-filter: blur(18px) saturate(130%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--glass-strong) 86%, transparent),
+    color-mix(in srgb, var(--glass) 72%, transparent)
+  );
+  border-bottom: 1px solid var(--line-strong);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.2rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 12px 36px rgba(10, 20, 40, 0.22);
 }
 
 .brand {
@@ -48,11 +54,12 @@
   font-size: 0.94rem;
   padding: 0.45rem 0.5rem;
   border-radius: 10px;
-  transition: color 180ms ease;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .top-nav a:hover {
-  color: var(--accent-soft);
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--glass) 70%, transparent);
 }
 
 .nav-button {
@@ -99,11 +106,13 @@ main {
   inset: 8% -8% auto;
   height: min(560px, 72svh);
   border-radius: 42px;
-  background: radial-gradient(circle at 20% 28%, #183157 0%, transparent 48%),
-    radial-gradient(circle at 78% 32%, #005f62 0%, transparent 45%),
-    radial-gradient(circle at 48% 75%, #21356a 0%, transparent 50%),
-    linear-gradient(130deg, #091228, #0c162e);
-  filter: saturate(120%);
+  background: radial-gradient(circle at 24% 26%, rgba(129, 181, 255, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 74% 24%, rgba(114, 236, 224, 0.26) 0%, transparent 44%),
+    radial-gradient(circle at 54% 76%, rgba(112, 145, 255, 0.32) 0%, transparent 52%),
+    linear-gradient(130deg, rgba(12, 28, 54, 0.92), rgba(10, 24, 46, 0.9));
+  border: 1px solid rgba(188, 220, 255, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), 0 28px 64px rgba(7, 14, 28, 0.32);
+  filter: saturate(125%);
   animation: drift 11s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -154,11 +163,14 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  background: var(--glass);
+  backdrop-filter: blur(12px) saturate(122%);
+  -webkit-backdrop-filter: blur(12px) saturate(122%);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--glass) 82%, transparent), rgba(255, 255, 255, 0.02));
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   padding: 0.62rem 1rem;
   font-size: 0.92rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 8px 24px rgba(9, 18, 34, 0.26);
 }
 
 .rotating-pill span {
@@ -197,15 +209,18 @@ h3 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), #0ea58f);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 90%, #8debe1), #1cb8a8);
   color: #041816;
-  box-shadow: 0 8px 30px rgba(29, 185, 170, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26), 0 10px 28px rgba(38, 204, 189, 0.28);
 }
 
 .btn-secondary {
   color: var(--text-primary);
   border-color: var(--line-strong);
-  background: color-mix(in srgb, var(--panel) 60%, transparent);
+  backdrop-filter: blur(10px) saturate(118%);
+  -webkit-backdrop-filter: blur(10px) saturate(118%);
+  background: color-mix(in srgb, var(--glass) 72%, transparent);
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .btn-secondary:hover {
@@ -231,10 +246,12 @@ h3 {
 
 .summary-card {
   border-radius: 22px;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, rgba(16, 28, 51, 0.96), rgba(11, 24, 45, 0.96));
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(15px) saturate(120%);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--glass-strong) 82%, transparent), color-mix(in srgb, var(--glass) 64%, transparent));
   padding: 1.4rem;
-  box-shadow: 0 12px 44px rgba(4, 9, 20, 0.28);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 16px 44px var(--glass-shadow);
 }
 
 .summary-card h2 {
@@ -246,7 +263,7 @@ h3 {
 }
 
 .momentum-card {
-  background: linear-gradient(135deg, rgba(14, 32, 58, 0.98), rgba(8, 20, 36, 0.96));
+  background: linear-gradient(145deg, rgba(30, 58, 94, 0.58), rgba(17, 34, 58, 0.56));
 }
 
 .momentum-list {
@@ -308,18 +325,20 @@ h3 {
 
 .mockup-device {
   border-radius: 30px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   padding: 0.9rem;
-  background: linear-gradient(180deg, rgba(10, 18, 36, 0.98), rgba(7, 13, 25, 0.98));
-  box-shadow: 0 18px 50px rgba(4, 9, 20, 0.35);
+  backdrop-filter: blur(15px) saturate(120%);
+  -webkit-backdrop-filter: blur(15px) saturate(120%);
+  background: linear-gradient(180deg, rgba(23, 43, 72, 0.62), rgba(12, 24, 44, 0.56));
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 18px 50px var(--glass-shadow);
 }
 
 .mockup-screen {
   min-height: 420px;
   border-radius: 22px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--line);
   padding: 1rem;
-  background: linear-gradient(180deg, rgba(17, 30, 57, 0.96), rgba(10, 18, 35, 0.98));
+  background: linear-gradient(180deg, rgba(30, 54, 90, 0.56), rgba(17, 31, 56, 0.62));
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
@@ -386,9 +405,12 @@ h3 {
 
 .mockup-notes article {
   border-radius: 18px;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--panel) 76%, transparent);
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(10px) saturate(116%);
+  -webkit-backdrop-filter: blur(10px) saturate(116%);
+  background: color-mix(in srgb, var(--glass) 78%, transparent);
   padding: 1.15rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .mockup-notes h3 {
@@ -402,11 +424,13 @@ h3 {
 .project-card {
   margin-top: 1.25rem;
   border-radius: 22px;
-  border: 1px solid var(--line);
-  background: linear-gradient(135deg, var(--panel), var(--panel-alt));
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(14px) saturate(118%);
+  -webkit-backdrop-filter: blur(14px) saturate(118%);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--glass-strong) 84%, transparent), color-mix(in srgb, var(--glass) 72%, transparent));
   padding: 1.35rem;
   transform-style: preserve-3d;
-  box-shadow: 0 12px 44px rgba(4, 9, 20, 0.32);
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 14px 40px var(--glass-shadow);
 }
 
 .project-card.featured {
@@ -488,9 +512,12 @@ h3 {
 
 .stack-card {
   border-radius: 18px;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--panel) 72%, transparent);
+  border: 1px solid var(--line-strong);
+  backdrop-filter: blur(10px) saturate(118%);
+  -webkit-backdrop-filter: blur(10px) saturate(118%);
+  background: color-mix(in srgb, var(--glass) 74%, transparent);
   padding: 1.15rem;
+  box-shadow: inset 0 1px 0 var(--glass-highlight);
 }
 
 .stack-card ul {
@@ -505,10 +532,13 @@ h3 {
 
 .cta {
   margin-top: 4.2rem;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: 24px;
   padding: 2rem;
-  background: linear-gradient(140deg, rgba(26, 44, 79, 0.58), rgba(7, 16, 32, 0.88));
+  backdrop-filter: blur(16px) saturate(122%);
+  -webkit-backdrop-filter: blur(16px) saturate(122%);
+  background: linear-gradient(140deg, rgba(38, 68, 114, 0.5), rgba(14, 27, 48, 0.66));
+  box-shadow: inset 0 1px 0 var(--glass-highlight), 0 20px 48px var(--glass-shadow);
 }
 
 footer {

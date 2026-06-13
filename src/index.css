@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
-  --bg-deep: #060c1a;
-  --bg-soft: #0a1428;
-  --panel: #101c33;
-  --panel-alt: #0b182d;
-  --line: #20304f;
-  --line-strong: #2f4670;
-  --accent: #25d3be;
-  --accent-soft: #7ae9de;
-  --text-primary: #eef4ff;
-  --text-muted: #a7b8d6;
-  --text-dim: #7f91b3;
-  --glass: rgba(17, 34, 62, 0.65);
+  --bg-deep: #081426;
+  --bg-soft: #0d1f3a;
+  --panel: #152947;
+  --panel-alt: #11233f;
+  --line: rgba(164, 204, 255, 0.2);
+  --line-strong: rgba(194, 225, 255, 0.34);
+  --accent: #46d6c3;
+  --accent-soft: #a5f2ea;
+  --text-primary: #f2f7ff;
+  --text-muted: #c2d2eb;
+  --text-dim: #9cb2d2;
+  --glass: rgba(22, 42, 72, 0.42);
+  --glass-strong: rgba(30, 56, 95, 0.58);
+  --glass-highlight: rgba(255, 255, 255, 0.22);
+  --glass-shadow: rgba(6, 14, 28, 0.38);
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
   --font-heading: 'Space Grotesk', 'Segoe UI', sans-serif;
 }
@@ -27,8 +30,9 @@ html {
 
 body {
   margin: 0;
-  background: radial-gradient(circle at 12% 9%, #142546 0%, transparent 45%),
-    radial-gradient(circle at 85% 4%, #0e2f45 0%, transparent 38%),
+  background: radial-gradient(circle at 12% 8%, rgba(100, 170, 255, 0.24) 0%, transparent 42%),
+    radial-gradient(circle at 82% 10%, rgba(92, 228, 215, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 54% 82%, rgba(74, 130, 230, 0.2) 0%, transparent 36%),
     linear-gradient(180deg, var(--bg-deep), var(--bg-soft));
   color: var(--text-primary);
   font-family: var(--font-body);
