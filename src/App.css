@@ -1159,3 +1159,64 @@ footer p {
     transition: none;
   }
 }
+
+/* ── Pratibha Mockup Page ────────────────────────────── */
+.mockup-page {
+  width: min(1180px, calc(100vw - clamp(1rem, 4vw, 3rem)));
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-content: start;
+}
+
+.mockup-page-header {
+  max-width: 62ch;
+}
+
+.mockup-page-title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0.4rem 0 0;
+}
+
+.mockup-page-desc {
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.04rem;
+}
+
+.mockup-page-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.mockup-page-notes {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.mockup-page-note-label {
+  margin: 0;
+}
+
+.mockup-page-return {
+  display: flex;
+}
+
+/* Featured card: mockup link button */
+.project-mockup-link {
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 640px) {
+  .mockup-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-mockup-link .btn {
+    width: 100%;
+  }
+}

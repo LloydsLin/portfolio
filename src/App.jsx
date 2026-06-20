@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import DigitalIdPage from './pages/DigitalIdPage.jsx'
+import PratibhaMockupPage from './pages/PratibhaMockupPage.jsx'
 import './App.css'
 
 const rotatingWords = ['React Native UI', 'Smooth Mobile Flows', 'Scalable Front Ends']
@@ -59,7 +60,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (route === '#/digital-id') {
+    if (route === '#/digital-id' || route === '#/pratibha-mockup') {
       return undefined
     }
 
@@ -72,6 +73,10 @@ function App() {
 
   if (route === '#/digital-id') {
     return <DigitalIdPage />
+  }
+
+  if (route === '#/pratibha-mockup') {
+    return <PratibhaMockupPage />
   }
 
   const featuredProject = projectHighlights[0]
@@ -96,11 +101,11 @@ function App() {
         <section className="hero" id="home">
           <div className="hero-mesh" aria-hidden="true" />
           <div className="hero-content">
-            <p className="eyebrow">Junior Mobile Developer</p>
-            <h1>
+            <p className="eyebrow"> Mobile Application Developer</p>
+            <h2>
               Building polished, user-first mobile experiences that turn ideas into
               intuitive products.
-            </h1>
+            </h2>
             <p className="hero-subtext">
               I recently worked on the Pratibha mobile app, focused on interface
               implementation, reusable component thinking, and smooth product delivery.
@@ -158,6 +163,10 @@ function App() {
               <p className="achievement">
                 <span>Key Achievement:</span> {featuredProject.achievement}
               </p>
+
+              <a className="inline-link" href="#/pratibha-mockup">
+                View App Mockup Screens →
+              </a>
             </article>
 
             <div className="project-grid">
