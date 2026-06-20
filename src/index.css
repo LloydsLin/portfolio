@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
 
 :root {
   --bg-deep: #081426;
@@ -26,6 +35,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body,
+#root {
+  min-width: 320px;
 }
 
 body {
